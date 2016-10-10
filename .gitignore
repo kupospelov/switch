@@ -1,0 +1,5 @@
+Switch/*.Cache
+Switch/bin/*
+Switch/obj/*
+packages/*
+.vs/*

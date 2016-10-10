@@ -1,0 +1,42 @@
+﻿<src:Computer x:Class="Switch.Devices.PC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:src="clr-namespace:Switch.Devices"
+             xmlns:res="clr-namespace:Switch.Properties"
+             mc:Ignorable="d"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             Padding="0"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             AllowDrop="True"
+             Width="100"
+             Height="80">
+    <!--<src:Computer.ToolTip>
+        <Label Content="{Binding Path=Mac}"></Label>
+    </src:Computer.ToolTip>-->
+    <StackPanel VerticalAlignment="Bottom">
+        <Grid ShowGridLines="False" Width="80" Height="58">
+            <Grid.ContextMenu>
+                <ContextMenu Name="PortsMenu" StaysOpen="True">
+                    <MenuItem Header="{x:Static res:Resources.Remove}" Click="Remove">
+                        <MenuItem.Icon>
+                            <Image Height="20" Width="20" Margin="0,-2,0,0" Source="../Resources/appbar.close.png"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </Grid.ContextMenu>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Rectangle Margin="-1" Fill="Silver" RadiusX="0" RadiusY="0" Grid.Row="1" Height="6" Width="15"></Rectangle>
+            <Rectangle Fill="Silver" RadiusX="7" RadiusY="7" Grid.Row="0"></Rectangle>
+            <Rectangle Fill="LightBlue" RadiusX="0" RadiusY="0" Grid.Row="0" Height="42" Width="72"></Rectangle>
+            <Rectangle Fill="Silver" RadiusX="4" RadiusY="4"  Grid.Row="2"></Rectangle>
+        </Grid>
+        <TextBlock Name="LabelBlock" Margin="0,4,0,0" TextAlignment="Center" Text="{Binding Label, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type src:Device}}, Mode=TwoWay}">MAC</TextBlock>
+    </StackPanel>
+</src:Computer>

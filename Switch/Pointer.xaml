@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Switch.Pointer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:Switch.Properties"
+             mc:Ignorable="d">
+    <StackPanel VerticalAlignment="Bottom">
+        <Image Height="30" Source="Resources/appbar.cusor.pointer.png"></Image>
+        <TextBlock Name="LabelBlock" Margin="0,0,0,0" TextAlignment="Center" Text="{x:Static res:Resources.Pointer}"></TextBlock>
+    </StackPanel>
+</UserControl>
